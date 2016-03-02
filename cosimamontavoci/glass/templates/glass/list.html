@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Lampwork Jewelry{% endblock %}
+{% block extra_head %}
+    <link href="{% static 'css/events_stylesheet.css' %}" rel="stylesheet" type="text/css">
+    <meta name="description" content="A selection of lampwork glass jewellery by Cosima Montavoci, including necklaces, bracelets
+    and glass beads">
+{% endblock %}
+{% block content %}
+
+    <h1 class="event-title">Lampwork Jewelry</h1>
+    <div class="events-list">
+    <div class="row row-eq-height" style="padding-top: 20px">
+    <div class="all-glass-written col-md-4">
+
+        {% for glass_item in glass_all %}
+            <h2>
+        <a href="{{ glass_item.get_absolute_url }}">
+            {{ glass_item.title }}
+        </a>
+    </h2>
+        {% endfor %}
+    </div>
+    <div class="random-photo-glass col-md-8">
+        <img src="{{ random_photo.image.url }}">
+    </div>
+
+</div>
+</div>
+{% endblock %}

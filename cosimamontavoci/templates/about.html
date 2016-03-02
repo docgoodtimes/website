@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_head %}
+    <link href="{% static 'css/events_stylesheet.css' %}" rel="stylesheet" type="text/css">
+    <meta name="description" content="Website of Cosima Montavoci, Venetian artist and lampwork
+    glass jewellery artesan based in Amsterdam, Netherlands">
+{% endblock %}
+{% block content %}
+
+<h1 class="event-title">About</h1>
+<div class="row">
+<div class="random-photo-glass col-md-4">
+<img src="{% static "images/new_about.jpg" %}"/>
+
+</div>
+<div class="col-md-8">
+<p>Born in Venice, Italy. Graduated in 2015 in Fine Arts at the <span><a title="Gerrit Rietveld Academie" href="http://www.gerritrietveldacademie.nl/en/" target="_blank">Gerrit Rietveld Academie</a></span>.
+    <p>My atelier is at the NDSM Werf, Amsterdam Noord.</p>
+    <p>I am currently working at Officina where I produce and sell my glass creations.</p>
+<p>Officina is located in Hazenstraat 70, Amsterdam, at the corner with Elandsgracht.</p>
+
+<h4><strong>Experience</strong></h4>
+
+<p>I was responsible for the Greek Pavillion  at the Architecture Biennale in Venice in 2008 (exhibition: <span><a title="Athens by Sound" href="http://www.athensbysound.gr/" target="_blank">Athens by Sound</a></span>) and for the <span><a title="Art Biennale" href="http://www.labiennale.org/en/Home.html" target="_blank">Art Biennale</a></span> (artist: <span><a title="Lucas Samaras" href="http://en.wikipedia.org/wiki/Lucas_Samaras" target="_blank">Lucas Samaras</a></span>) in 2009.</p>
+
+<p>I worked with glass in Murano from 2005 to 2008. I created glass beads with: <span><a title="Davide Penso" href="http://www.davidepenso.com/" target="_blank">Davide Penso</a></span>, <span><a title="Muranero" href="http://www.muranero.venezia.it/" target="_blank">Muranero</a></span> (Mouaye Niang), Anfora and <span><a title="Centro Culturale Spiazzi" href="http://infospiazzi.blogspot.it/" target="_blank">Centro Culturale Spiazzi</a></span>.</p>
+
+<h4><strong>Exhibitions</strong></h4>
+
+<p>2015 - <span><a href="/artworks/tomb-sculpture" target="_blank">Tomb Sculpture</a></span> at the Gerrit Rietveld Academie <span><a title="Graduation Show 2015 - Rietveld Academie" href="http://www.gerritrietveldacademie.nl/en/graduation20151" target="_blank">Graduation Show</a></span>, Amsterdam.</p>
+
+<p>2015 - <span><a title="Andata e Ritorno 2.0" href="http://www.artribune.com/dettaglio/evento/40271/andata-e-ritorno-2-0/" target="_blank">Andata e Ritorno 2.0</a></span> at Ex Herion, Venice.</p>
+
+<p>2014 - <span><a title="Vanitas" href="/artworks/vanitas/" target="_blank">Vanitas</a></span> at the <span><a title="Oude Kerk" href="http://www.oudekerk.nl" target="_blank">Oude Kerk</a></span>, Amsterdam.</p>
+
+<p>2013 - <span><a title="The Fall of the Knight" href="/artworks/fall-knight/" target="_blank">The Fall of the Knight</a></span> at the <span><a title="Vishal" href="http://www.devishal.nl" target="_blank">Vishal</a></span>, Haarlem.</p>
+<br><br>
+    <span style="color: #ffffff;"><a class="download" title="Portfolio Cosima" href="{% static "images/cosima_montavoci_portfolio_english.pdf" %}" target="_blank">Download my portfolio</a></span>
+    </div>
+
+</div>
+{% endblock %}

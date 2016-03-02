@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ glass_item.title }} | Cosima Montavoci{% endblock %}
+{% block extra_head %}
+    <link href="{% static 'css/events_stylesheet.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.css' %}" type="text/css" media="screen" />
+    <script type="text/javascript" src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/fancyfancy.js' %}"></script>
+    <meta name="description" content="{{ glass_item.seo_description }}">
+{% endblock %}
+
+{% block content %}
+    <div class="prev-next">
+    {% if glass_item.get_next_by_publish %}
+    <a href="{{ glass_item.get_next_by_publish.get_absolute_url }}" style="float:left;">← {{ glass_item.get_next_by_publish.title }}</a>
+    {% endif %}
+    {% if glass_item.get_previous_by_publish %}
+    <a href="{{ glass_item.get_previous_by_publish.get_absolute_url }}" style="float:right;">{{ glass_item.get_previous_by_publish.title }} →</a>
+    {% endif %}
+    </div>
+    <h1 class="event-title">{{ glass_item.title }}</h1>
+
+    <div class="glass-thumbs">
+    <div class="inner-glass-thumbs">
+    {% for photo in glass_photos %}
+        <a class="fancybox" rel="gallery1" href="{{ photo.image.url }}">
+	<img class="glass-photo" src="{{ photo.thumb.url }}"/>
+        </a>
+    {% endfor %}
+    </div><!--end of inner-glass-thumbs -->
+
+    </div><!--end of glass-thumbs -->
+
+    <div class="artwork-body">
+    <p>{{ glass_item.body|safe }}</p>
+    </div>
+{% endblock %}
+
+
+
+

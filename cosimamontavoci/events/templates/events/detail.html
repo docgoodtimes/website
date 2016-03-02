@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ post.title }} | Cosima Montavoci{% endblock %}
+{% block extra_head %}
+    <link href="{% static 'css/events_stylesheet.css' %}" rel="stylesheet" type="text/css">
+    <!-- <meta name="description" content="{{ post.excerpt }}">  seo_description not available in model yet -->
+{% endblock %}
+{% block content %}
+<div class="prev-next">
+    {% if post.get_next_by_publish %}
+    <a href="{{ post.get_next_by_publish.get_absolute_url }}" style="float:left;">← {{ post.get_next_by_publish.title }}</a>
+    {% endif %}
+    {% if post.get_previous_by_publish %}
+    <a href="{{ post.get_previous_by_publish.get_absolute_url }}" style="float:right;">{{ post.get_previous_by_publish.title }} →</a>
+    {% endif %}
+    </div>
+    <h1 class="event-title">{{ post.title }}</h1>
+    {% if post.photo %}
+        <img class="post-photo" src="{{ post.photo.url }}" alt="{{ post.photo.name }}">
+    {% endif %}
+    <div class="event-body">
+    <p>{{ post.body|safe }}</p>
+    </div>
+{% endblock %}

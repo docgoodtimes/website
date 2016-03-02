@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Artworks{% endblock %}
+{% block extra_head %}
+    <link href="{% static 'css/events_stylesheet.css' %}" rel="stylesheet" type="text/css">
+    <meta name="description" content="A selection of artworks by Cosima Montavoci, Venetian artist and lampwork
+    glass jewellery artesan based in Amsterdam, Netherlands">
+{% endblock %}
+{% block content %}
+
+    <h1 class="event-title">Artworks</h1>
+    <div class="events-list">
+    <div class="all-artworks-written col-md-6">
+        {% for artwork in artworks %}
+    <h2>
+        <a href="{{ artwork.get_absolute_url }}">
+            {{ artwork.title }}
+        </a>
+    </h2>
+        {% endfor %}
+    </div>
+    <div class="random-photo-glass col-md-6">
+        <img src="{{ random_photo.image.url }}">
+    </div>
+</div>
+{% endblock %}

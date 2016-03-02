@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Events{% endblock %}
+{% block extra_head %}
+    <link href="{% static 'css/events_stylesheet.css' %}" rel="stylesheet" type="text/css">
+    <meta name="description" content="Latest news and events by Cosima Montavoci, Venetian artist and lampwork
+    glass jewellery artesan based in Amsterdam, Netherlands">
+{% endblock %}
+{% block content %}
+<div class="events-list">
+    <h1 class="event-title">Events</h1>
+        {% for post in posts %}
+            {% if forloop.counter|divisibleby:2 %}
+    <div class="post-list col-md-12" >
+    <div class="post-photo-list col-md-5">
+    {% if post.photo %}
+        <img src="{{ post.photo.url }}" alt="{{ post.photo.name }}" style="max-width: 100%;">
+    {% endif %}
+    </div>
+    <div class="inner-post-list col-md-6">
+    <h2>
+        <a href="{{ post.get_absolute_url }}">
+            {{ post.title }}
+        </a>
+    </h2>
+    <p>{{ post.excerpt }}</p>
+        <p>
+        <a href="{{ post.get_absolute_url }}">
+            Read More!
+            </a>
+
+    </div><!-- end of inner-post-list -->
+    </div><!-- end of post-list -->
+
+{% else %}
+
+    <div class="post-list col-md-12" >
+    <div class="inner-post-list col-md-6">
+    <h2>
+        <a href="{{ post.get_absolute_url }}">
+            {{ post.title }}
+        </a>
+    </h2>
+    <p>{{ post.excerpt }}</p>
+        <p>
+        <a href="{{ post.get_absolute_url }}">
+            Read More!
+            </a>
+</div>
+            <div class="post-photo-list col-md-5">
+    {% if post.photo %}
+        <img src="{{ post.photo.url }}" alt="{{ post.photo.name }}" style="max-width: 100%;">
+    {% endif %}
+    </div>
+    </div>
+{% endif %}
+{% endfor %}
+{% endblock %}

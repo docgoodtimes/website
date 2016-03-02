@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ artwork.title }} | Cosima Montavoci{% endblock %}
+{% block extra_head %}
+    <link href="{% static 'css/events_stylesheet.css' %}" rel="stylesheet" type="text/css">
+    <meta name="description" content="{{ artwork.seo_description }}">
+{% endblock %}
+
+{% block content %}
+    <div class="prev-next">
+    {% if artwork.get_next_by_publish %}
+    <a href="{{ artwork.get_next_by_publish.get_absolute_url }}" style="float:left;">← {{ artwork.get_next_by_publish.title }}</a>
+    {% endif %}
+    {% if artwork.get_previous_by_publish %}
+    <a href="{{ artwork.get_previous_by_publish.get_absolute_url }}" style="float:right;">{{ artwork.get_previous_by_publish.title }} →</a>
+    {% endif %}
+    </div>
+    <h1 class="event-title">{{ artwork.title }}</h1>
+
+    <div class="col-md-12 section-viewer">
+    <div class="col-md-10 images">
+    {% with photo_gallery.all|first as photo %}
+        <img class="col-md-10 photo-slides" src="{{ photo.image.url }}"></img>
+    {% endwith %}
+    </div><!--end of images -->
+    <div class="col-md-2 viewer-controls">
+        <div class="inner">
+            <ul class="artworks-list">
+                {% for photo in photo_gallery %}
+                <li class="photo-list">
+                    <a href="{{ photo.image.url }}">Image {{ photo.order }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div><!-- end of inner -->
+    </div><!--end of viewer-controls-->
+
+    </div><!--end of section-viewer -->
+
+
+    <div class="section-data">
+    <div class="section-data-inner">
+    <div class="content-right">
+    <div class="inner">
+    <div class="row">
+        <p> {{ artwork.year }}</p>
+    </div>
+    <div class="row">
+        <p> {{ artwork.materials }}</p>
+    </div>
+    <div class="row">
+        <p> {{ artwork.exhibited }}</p>
+    </div>
+    <div class="row">
+        <p> {{ artwork.measures }}</p>
+    </div>
+    </div><!-- end of inner -->
+    </div><!-- end of content content-right -->
+    </div>
+    </div> <!-- end of section-data -->
+    <div class="artwork-body">
+    <p>{{ artwork.body|safe }}</p>
+    </div>
+{% endblock %}
+

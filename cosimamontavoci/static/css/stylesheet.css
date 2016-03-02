@@ -1,0 +1,104 @@
+/* Initial body */
+body {
+  left: 0;
+  margin: 0;
+  overflow: auto;
+  position: relative;
+}
+
+/* Initial menu */
+.menu {
+  background: #202024 repeat left top;
+  left: -200px;  /* start off behind the scenes */
+  height: 100%;
+  position: fixed;
+  width: 200px;
+  z-index:99;
+}
+
+/* Basic styling */
+
+.jumbotron {
+    width: 100%; height: 100%; top: 0; left: 0;
+    background: url('../images/death_keeps_me_awake.jpg') no-repeat center top; position: fixed; z-index: -1;
+    -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+            background-size: cover;
+}
+
+.jumbojumbo {
+    width: 100%; height: 100%; top: 0; left: 0;
+    background: url('../images/skull.jpg') no-repeat center top; position: fixed; z-index: -1;
+    -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+            background-size: cover;
+}
+
+.jumbojumbojumbo {
+    width: 100%; height: 100%; top: 0; left: 0;
+    background: url('../images/teeth_field.JPG') no-repeat center top; position: fixed; z-index: -1;
+    -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+            background-size: cover;
+}
+
+.menu ul {
+  border-top: 1px solid #636366;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  border-bottom: 1px solid #636366;
+  font-family: 'Calibri', sans-serif;
+  line-height: 45px;
+  padding-bottom: 3px;
+  padding-left: 20px;
+  padding-top: 3px;
+}
+
+.menu a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.icon-close {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-top: 10px;
+
+
+}
+
+.icon-close img {
+    max-width: 20px;
+    padding-bottom: 4px;
+    -webkit-filter: invert(100%);
+}
+
+.icon-menu {
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Calibri', sans-serif;
+  font-size: 16px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.icon-menu i {
+  margin-right: 5px;
+}
+
+p,a {
+    font-family: 'Calibri', sans-serif;
+}
